@@ -1,0 +1,11 @@
+input_lines = int(input())
+
+
+pi = '3.141592653589793'
+
+if (input_lines>=1 and input_lines<=15):
+    a = []
+    a = pi.split('.')
+    one=a[0]
+    two=a[1]
+    print(one + '.' + two[0:input_lines])
