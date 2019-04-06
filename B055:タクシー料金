@@ -12,15 +12,17 @@ if amount_taxi <= 100 and amount_taxi >= 2:
             
         for i in range(amount_taxi):
             taxidata.append(input().split())
+            taxidata[i] = list(map(int, taxidata[i]))
+            boo = [i for i in taxidata[i] if i >= 1 and i <= 5000]
+        
+            if boo:
             
-            if distance >= int(taxidata[i][0]):
-                cost[i] += int(taxidata[i][1]) + (((distance - int(taxidata[i][0]))//int(taxidata[i][2])) + 1) * int(taxidata[i][3])
+                if distance >= int(taxidata[i][0]):
+                    cost[i] += int(taxidata[i][1]) + (((distance - int(taxidata[i][0]))//int(taxidata[i][2])) + 1) * int(taxidata[i][3])
                 
-            else:
-                cost[i] += int(taxidata[i][1])
+                else:
+                    cost[i] += int(taxidata[i][1])
                 
         print(min(cost),max(cost))
-        
-        
         
         
