@@ -1,0 +1,26 @@
+data = input().split()
+
+amount_taxi = int(data[0])
+distance = int(data[1])
+taxidata = []
+cost = []
+if amount_taxi <= 100 and amount_taxi >= 2:
+    if distance <= 100000 and distance >= 1:
+        for x in range(amount_taxi):
+            cost.append(0)
+            
+            
+        for i in range(amount_taxi):
+            taxidata.append(input().split())
+            
+            if distance >= int(taxidata[i][0]):
+                cost[i] += int(taxidata[i][1]) + (((distance - int(taxidata[i][0]))//int(taxidata[i][2])) + 1) * int(taxidata[i][3])
+                
+            else:
+                cost[i] += int(taxidata[i][1])
+                
+        print(min(cost),max(cost))
+        
+        
+        
+        
